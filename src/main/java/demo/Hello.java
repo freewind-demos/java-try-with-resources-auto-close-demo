@@ -1,11 +1,13 @@
 package demo;
 
-import org.apache.commons.lang3.StringUtils;
+import java.io.IOException;
 
 public class Hello {
 
-  public static void main(String[] args) {
-    System.out.println(StringUtils.trim("Hello World!  "));
+  public static void main(String[] args) throws IOException {
+    try (MyResource resource = new MyResource()) {
+      resource.show();
+    }
   }
 
 }
